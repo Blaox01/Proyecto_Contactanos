@@ -1,0 +1,448 @@
+header {
+	background-color: #ffa500;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Navbar */
+:root {
+    --blue : #12d2db;
+    --white : #fcf2fa;
+    --purple : #f87407;
+    --purple-blc : #42230cdd;
+    --shadow : 0 5px 10px 5px rgba(0, 0, 0, .3);
+    --navColor : linear-gradient(to right, #dbdbdb 5%, #888888);
+}
+ 
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: lato;
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	color: #000000;
+	background-color: #2d2d2d;
+}
+nav {
+  position: absolute;
+  background: var(--navColor);
+  box-shadow: var(--shadow);
+  height: 80px;
+  width: 100%;
+  z-index: 2;
+}
+@media screen and (max-width: 768px) and (max-height: 500px) {
+  img.logo {
+    color: var(--white);
+    font-size: 30px;
+    line-height: 80px;
+    padding: 0 20px;
+    letter-spacing: -1px;
+    font-weight: 800;
+    font-style: italic;
+    transition: .2s ease;
+    text-shadow: 3px 5px 20px #230622aa;
+  }
+}
+@media screen and (min-width: 769px) {
+  img.logo {
+    color: var(--white);
+    font-size: 30px;
+    line-height: 80px;
+    padding: 0 80px;
+    letter-spacing: -1px;
+    font-weight: 800;
+    font-style: italic;
+    transition: .2s ease;
+    text-shadow: 3px 5px 20px #230622aa;
+  }
+}
+ 
+nav ul {
+  float: right;
+  margin-right: 80px;
+}
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+}
+nav ul li a {
+  color: var(--white);
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 13px;
+  text-transform: lowercase;
+}
+a.active, a:hover {
+  background: var(--purple);
+  transition: .5s;
+}
+.checkbtn {
+  line-height: 80px;
+  font-size: 30px;
+  float: right;
+  cursor: pointer;
+  margin-right: 40px;
+  display: none;
+}
+.checkbtn i {
+  color: var(--white);
+  padding: 5px;
+  border-radius: 10px;
+  transition: .5s ease;
+}
+.checkbtn i:hover {
+  background: var(--purple);
+}
+#check {
+  display: none;
+}
+
+
+/* responsove code */
+@media (max-width: 952px) {
+    /* table mode */
+    label.logo {
+      font-size: 25px;
+      padding-left: 50px;
+    }
+    nav ul li a {
+      font-size: 14px;
+    }
+}
+ 
+@media (max-width: 858px) {
+    /* mobile mode */
+    .checkbtn {
+      display: block;
+    }
+    ul {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: var(--purple-blc);
+      top: 80px;
+      left: -100%;
+      padding-top: 80px;
+      text-align: center;
+      transition: .5s ease;
+    }
+    nav ul li {
+      display: block;
+      margin: 30px 0;
+      line-height: 30px;
+      transform: translate(-12%, 0%);
+    }
+    nav ul li a {
+      font-size: 20px;
+    }
+    a.active, a:hover {
+      background: none;
+      color: var(--blue);
+      text-shadow: 0 10px 15px var(--blue);
+    }
+    #check:checked ~ ul {
+      left: 0;
+    }
+}
+
+h1 {
+	margin: 0;
+	font-size: 36px;
+	text-align: center;
+}
+
+main {
+	background: url('Fondo_sitio.png') no-repeat;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form-container {
+	background-color: rgba(211, 208, 208, 0.5);
+	padding: 10px;
+	
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.form-header {
+	margin-bottom: 20px;
+}
+
+.form-header h2 {
+	margin: 0;
+	font-size: 24px;
+}
+
+.form-row {
+	margin-bottom: 10px;
+}
+
+.form-row label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.form-row input[type="text"],
+.form-row input[type="email"],
+.form-row input[type="tel"],
+.form-row select {
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	box-sizing: border-box;
+}
+
+.contact-methods {
+	display: flex;
+	align-items: center;
+}
+
+.contact-methods label {
+	margin-right: 10px;
+}
+
+.info-request {
+	background-color: #f2dede;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+footer {
+	background-color: #333;
+	padding: 20px;
+	color: #fff;
+	text-align: center;
+}
+
+::placeholder {
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.form-row-group1,
+		.form-row-group2 {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+
+		.form-row-group1 .form-row,
+		.form-row-group2 .form-row {
+			flex-basis: calc(33.33% - 10px);
+			margin-bottom: 10px;
+		}
+
+		.form-row-group2 {
+			margin-top: 20px;
+		}
+
+    .guardar-btn {
+      background-color: #12d2db;
+      color: #fcf2fa;
+  }
+
+    /* Mapa */
+     
+    #mapa {
+      display: flex;
+      flex-wrap: wrap;
+    }
+     
+    .map-container {
+      flex: 1;
+      position: relative;
+      height: 150%;
+    }
+     
+    .map-container iframe {
+      width: 130vh;
+      height: 58vh;
+    }
+     
+    .map-description{
+      flex: 1;
+      background: url('kjv-churches-missions-conference.jpeg') no-repeat;
+      background-size: 640px;
+    }
+     
+    .h2-map-container{
+      display: flex;
+      justify-content: center; /* Centra horizontalmente */
+      align-items: center; /* Centra verticalmente */
+    }
+     
+    .h2-map-color{
+      color: white;
+      line-height: 1.2;
+      transform: translate(5%, 225%);
+    }
+     
+    #center-map{
+      color: rgb(253, 143, 0);
+      font-size: 15vh;
+      transform: translate(-28%, 130%);
+    }
+     
+    @media screen and (max-width: 768px) {
+      #mapa {
+        flex-direction: column; /* Cambia la dirección de los elementos a columna en teléfonos */
+      }
+     
+      .map-container {
+        width: auto; /* Cambia el ancho a automático para ocupar el ancho completo del dispositivo móvil */
+        height: auto; /* Cambia la altura a automático para ajustarse al contenido */
+      }
+     
+      .map-container iframe {
+        width: 45vh;
+        height: 35vh;
+      }
+     
+      .h2-map-color{
+        transform: translate(5%, 15%);
+      }
+     
+      #center-map{
+        font-size: 10vh;
+        transform: translate(-28%, -15%);
+      }
+    }
+     
+    /* footer */
+     
+    .plantilla {
+      background: rgb(206, 206, 206);
+      height: 37vh;
+    }
+     
+    .plantilla-footer {
+      display: flex;
+      justify-content: space-between;
+      color: #000000;
+      padding: 20px;
+    }
+     
+    .container-img{
+      display: flex;
+      align-items: center;
+      transform: translate(3%, 0%);
+    }
+     
+    .plantilla-img{
+      width: 400px;
+      height: auto;
+    }
+     
+    .side-div {
+      margin-left: 20px; /* Ajusta el margen izquierdo para separar la imagen del div */
+      transform: translate(-25%, 2%);
+    }
+     
+    .plantilla-img-2{
+      margin-bottom: 3px; /* Añade un espacio entre las imágenes */
+    }
+    .plantilla-img-2 img {
+      max-width: 90px; /* Establece el ancho máximo deseado */
+      height: auto; /* Permite que la altura se ajuste automáticamente */
+    }
+     
+    .contactos {
+      text-align: left;
+    }
+     
+    .h2-color {
+      color: #fff;
+      text-align: center;
+    }
+     
+    .contacto-text{
+      font-size: 3vh;
+    }
+     
+    .contacto-info {
+      list-style: none;
+      padding: 0;
+    }
+     
+    .contacto-info-li {
+      margin: 5px 0;
+      font-size: 3vh;
+    }
+     
+    #contacto-info-i {
+      margin-right: 20px;
+    }
+     
+    @media screen and (max-width: 768px) {
+      .plantilla {
+        height: 109vh;
+        overflow: hidden;
+      }
+     
+      .plantilla-footer {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        align-items: center; /* Centra los elementos horizontalmente */
+        text-align: center; /* Centra el texto */
+        padding: 10px;
+      }
+     
+      .container-img{
+        display: flex;
+        align-items: center;
+        transform: translate(11%, 50%);
+      }
+     
+      .plantilla-img{
+        width: 400px;
+        height: auto;
+        transform: translate(10%, -40%);
+      }
+     
+      .side-div {
+        display: flex;
+        margin-right: 10px; /* Ajusta el margen izquierdo para separar la imagen del div */
+        transform: translate(-145%, 70%);
+      }
+     
+      .plantilla-img-2 img {
+        max-width: 90px; /* Establece el ancho máximo deseado */
+        height: auto; /* Permite que la altura se ajuste automáticamente */
+      }
+     
+      .contacto-text{
+        text-align: center;
+        font-size: 3vh;
+      }
+     
+      .contacto-info {
+        text-align: center; /* Centra los elementos de la lista */
+      }
+     
+      .contacto-info-li {
+        margin: 10px 0; /* Aumenta el espacio entre elementos de la lista */
+      }
+     
+      #contacto-info-i {
+        margin-right: 0; /* Elimina el margen derecho de los íconos */
+      }
+    }
+    .section-down{
+      height: 100vh;
+      background: linear-gradient(90deg, rgb(189, 189, 189) 0%, rgb(131, 131, 131) 33%, rgb(95, 95, 95) 100%) no-repeat;
+      background-position: center top;
+      background-size: cover;
+    }
+    

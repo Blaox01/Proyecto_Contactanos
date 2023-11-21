@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact Form</title>
+	<link href="{% static 'cssTest_05.css'%}"  rel="stylesheet">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+</head>
+<body>
+	<header>
+		<nav id="navbar">
+			<input type="checkbox" id="check">
+			<label for="check" class="checkbtn">
+			  <i class="bx bx-menu"></i>
+			</label>
+			<img class="logo" src="{% static 'Logo_minigap.png'%}" height="100%">
+			<ul>
+			  <li><a href="{% url 'inicio' }">Inicio</a></li>
+			  <li><a href="#">Servicios</a></li>
+			  <li><a href="#">Nosotros</a></li>
+			  <li><a href="#">Contactanos</a></li>
+			</ul>
+		</nav>
+		<h1>Déjanos tus datos y te contactaremos</h1>
+	</header><div class="user-icon"></div>
+	<main>
+		<div>
+			<div class="form-header">
+				<h2 class="form-container">Datos personales</h2>
+			</div>
+			{% if mensaje_exito %}
+                <p style="color: green;">{{ mensaje_exito }}</p>
+            {% endif %}
+            <form method="post" action="{% url 'contacto' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                
+            </form>
+			<form>
+				<div class="form-row">
+					<div class="info-request">
+						<h3>Información a solicitar</h3>
+					</div>
+				</div>
+				<div class="form-row">
+					<label for="servicio-preferido">Servicio de preferencia</label>
+					<select id="servicio-preferido">
+						<option value="">Seleccione una opción</option>
+						<option value="servicio-1">Servicio 1</option>
+						<option value="servicio-2">Servicio 2</option>
+						<option value="servicio-3">Servicio 3</option>
+					</select>
+				</div>
+				<div class="form-row">
+					<button type="submit">Guardar</button>
+				</div>
+			</form>
+		</div>
+	</main>
+
+	<section class="section-down">
+        <h1 style="background-color: chocolate">MAPA DE MININGCAP</h1>
+        <div id="mapa">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7374.583388194395!2d-68.9324779!3d-22.4556703!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96ac09814f9c3f33%3A0xcb60c1c5f1d154b9!2sMinigcap!5e0!3m2!1ses-419!2scl!4v1698875226639!5m2!1ses-419!2scl" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="map-description">
+                <h2 class="h2-color">Ubicacion</h2>
+                <div class="h2-map-container">
+                    <i class='bx bxs-map-pin' id="center-map"></i>
+                    <h2 class="h2-map-color">Avenida chorrillos 799,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Villa Exótica</h2>
+                </div>
+            </div>
+        </div>
+        <div class="plantilla">
+            <footer class="plantilla-footer">
+                <div class="contactos">
+                    <h4 class="contacto-text">Contacto</h4>
+                    <ul class="contacto-info">
+                        <li class="contacto-info-li"><i class='bx bxs-phone' id="contacto-info-i"></i>8070 70 56 55</li>
+                        <li class="contacto-info-li"><i class='bx bx-mobile' id="contacto-info-i"></i>+56 4 4356787</li>
+                        <li class="contacto-info-li"><i class='bx bxs-envelope' id="contacto-info-i"></i>contacto@miningcap.cl</li>
+                        <li class="contacto-info-li"><i class='bx bxs-map' id="contacto-info-i"></i>Avenida chorrillos 799, Villa Exótica, Calama Antofagasta</li>
+                    </ul>
+                </div>
+                <div class="container-img">
+                    <img class="plantilla-img" src="{% static 'Logo_minigap.png' %}">
+                    <div class="side-div">
+                        <div class="plantilla-img-2">
+                            <img src="{% static 'otec_plus_intercapchile.png' %}">
+                        </div>
+                        <div class="plantilla-img-2">
+                            <img src="{% static 'SCI-Gestion-Otec.png'%}">
+                        </div>
+                    </div>
+                </div>
+          </footer>
+            </div>
+        </div>
+    </section>
+
+
+	<footer>
+		<p>© 2023 Todos los derechos reservados</p>
+	</footer>
+</body>
+</html>
